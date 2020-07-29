@@ -1,13 +1,13 @@
 {% set name = "wandb" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 0ed543a5f2df3df6a2f53a52f7ab7103c43d014b7ec87b553df8c3cec0935206
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b3afba328455e885fd0af74fb8e40eb9fe1290d18d1e24181ab6f551f888532d
 
 build:
   number: 0
@@ -17,7 +17,7 @@ build:
     - wb=wandb.cli:cli
     - wanbd=wandb.cli:cli
     - wandb-docker-run=wandb.cli:docker_run
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -29,12 +29,12 @@ requirements:
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0
     - gql
-    - nvidia-ml 
+    - nvidia-ml
     - psutil >=5.0.0
     - python
     - python-dateutil >=2.6.1
     - pyyaml >=3.10
-    - requests 
+    - requests
     - sentry-sdk >=0.4.0
     - shortuuid >=0.5.0
     - six >=1.10.0
