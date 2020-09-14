@@ -45,10 +45,6 @@ requirements:
 test:
   imports:
     - wandb
-  commands:
-    - wandb --help
-    - wb --help
-    - wanbd --help
 
 about:
   home: https://github.com/wandb/client
