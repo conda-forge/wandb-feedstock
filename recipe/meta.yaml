@@ -53,7 +53,7 @@ about:
   home: https://github.com/wandb/client
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt 
+  license_file: LICENSE
   summary: A CLI and library for interacting with the Weights and Biases API.
   doc_url: https://docs.wandb.com/ 
   dev_url: https://github.com/wandb/client
