@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e24ab8d143ea99c31e94293cbcffba32f18aed7bceee2e9da20c8fd79705ca09
+  sha256: d02427cda58a6618ba10a027a76d9e3f68ad923d35964b1b68785c49e5160009
 
 build:
   number: 0
@@ -52,7 +52,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: A CLI and library for interacting with the Weights and Biases API.
-  doc_url: https://docs.wandb.com/ 
+  doc_url: https://docs.wandb.com/
   dev_url: https://github.com/wandb/client
 
 extra:
