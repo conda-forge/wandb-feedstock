@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: true   # [py2k]
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
