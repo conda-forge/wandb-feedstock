@@ -23,7 +23,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - click >=7.0,!=8.0.0
+    - click >=7.0,<8
     - configparser >=3.8.1
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0
