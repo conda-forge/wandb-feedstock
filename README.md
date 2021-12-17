@@ -125,6 +125,7 @@ Feedstock Maintainers
 * [@mxr-conda](https://github.com/mxr-conda/)
 * [@ndmaxar](https://github.com/ndmaxar/)
 * [@oblute](https://github.com/oblute/)
+* [@raubitsj](https://github.com/raubitsj/)
 * [@rluria14](https://github.com/rluria14/)
 * [@vanpelt](https://github.com/vanpelt/)
 
