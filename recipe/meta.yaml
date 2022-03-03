@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.12.10" %}
+{% set version = "0.12.11" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: c2850a7ae318ed49bd1e7e4dddedd27dc92d49663faff9d698cb38d29689af93
+  sha256: 808c832a109cdd49f85226446b4224c77ff3bd81c0a9470e8fce43e5306a39a0
 
 build:
   number: 0
@@ -36,9 +36,9 @@ requirements:
     - pyyaml
     - requests >=2.0.0,<3
     - sentry-sdk >=1.0.0
+    - setproctitle
     - shortuuid >=0.5.0
     - six >=1.13.0
-    - subprocess32 >=3.5.3
     - yaspin >=1.0.0
 
 test:
