@@ -148,7 +148,6 @@ Feedstock Maintainers
 =====================
 
 * [@andrewtruong](https://github.com/andrewtruong/)
-* [@hadim](https://github.com/hadim/)
 * [@mxr-conda](https://github.com/mxr-conda/)
 * [@ndmaxar](https://github.com/ndmaxar/)
 * [@oblute](https://github.com/oblute/)
