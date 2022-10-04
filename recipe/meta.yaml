@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.13.2" %}
+{% set version = "0.13.3" %}
 
 
 package:
@@ -8,7 +8,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 38a0a4cb7b37648ca5b676f9962f49d75fecc735fd2c41d26bd184060396f2d4
+  sha256: 8f91a8b67949313769c686e4f5139e4c247de8ce140e72fdcdd7896da2ea1c87
+
 
 build:
   number: 0
@@ -28,16 +29,16 @@ requirements:
     - gitpython >=1.0.0
     - pathtools
     - promise >=2.0,<3
-    - protobuf >=3.12.0
+    - protobuf >=3.12.0,<4.0dev
     - psutil >=5.0.0
     - python >=3.6
-    - python-dateutil >=2.6.1
     - pyyaml
     - requests >=2.0.0,<3
     - sentry-sdk >=1.0.0
     - setproctitle
     - shortuuid >=0.5.0
     - six >=1.13.0
+    - setuptools
 
 test:
   imports:
@@ -66,3 +67,4 @@ extra:
     - vanpelt
     - andrewtruong
     - raubitsj
+    - synapticarbors
