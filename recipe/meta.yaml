@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.13.5" %}
+{% set version = "0.13.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 11f30a22e30abaa9c187e8b6aa4c12d76160b40bbe98a6f14b0dde9297bbfbe2
+  sha256: 0d721aea476fd013c61a516948630ad58ceba78f4283b1f4b446e931664a8a98
 
 
 build:
@@ -29,7 +29,7 @@ requirements:
     - gitpython >=1.0.0
     - pathtools
     - promise >=2.0,<3
-    - protobuf >=3.12.0,!=4.0.*,!=4.21.0,<5
+    - protobuf >=3.19.0,!=4.0.*,!=4.21.0,<5
     - psutil >=5.0.0
     - python >=3.6
     - pyyaml
