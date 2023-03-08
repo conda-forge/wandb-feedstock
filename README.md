@@ -1,11 +1,11 @@
-About wandb
-===========
+About wandb-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/wandb-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/wandb/client
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/wandb-feedstock/blob/main/LICENSE.txt)
 
 Summary: A CLI and library for interacting with the Weights and Biases API.
 
