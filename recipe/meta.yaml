@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.15.4" %}
+{% set version = "0.15.5" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 472daaaa1a4e29a46407a85fd77aadb724c91d87dfe2c37cd82ef77be2257011
+  sha256: 40c1d9ae501194bff408bc9c555865ffcccf08d2d65dd413547df0c17ed20cb5
 
 
 build:
@@ -24,7 +24,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - click >=7.0,!=8.0.0
+    - click >=7.1,!=8.0.0
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
     - pathtools
