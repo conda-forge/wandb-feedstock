@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.15.6" %}
+{% set version = "0.15.7" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 652bed446b426c9c6228168f170df470d5f22f6a32415b5e06961c3f7da53d38
+  sha256: af5adaf0529ed842d1facd31bc3839438e4ab397744a597f38327445edfaa89e
 
 
 build:
