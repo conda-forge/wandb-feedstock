@@ -22,18 +22,18 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
+    - python >=3.7
     - click >=7.1,!=8.0.0
-    - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
-    - pathtools
-    - protobuf >=3.19.0,!=4.21.0,<5
-    - psutil >=5.0.0
-    - python >=3.6
-    - pyyaml
     - requests >=2.0.0,<3
+    - psutil >=5.0.0
     - sentry-sdk >=1.0.0
+    - docker-pycreds >=0.4.0
+    - protobuf >=3.19.0,!=4.21.0,<5
+    - pyyaml
+    - pathtools
     - setproctitle
     - setuptools
     - appdirs >=1.4.3
