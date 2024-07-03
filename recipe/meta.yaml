@@ -20,6 +20,9 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - {{ compiler('go') }}
+    - go-licenses
   host:
     - pip
     - python >=3.7
