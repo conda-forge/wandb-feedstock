@@ -17,10 +17,12 @@ build:
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   build:
+    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
     - {{ compiler('go') }}
     - go-licenses
   host:
