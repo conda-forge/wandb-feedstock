@@ -20,13 +20,14 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - go
   host:
     - pip
     - python >=3.7
     - hatchling
     - typing_extensions
-    - go
-    - gcc
   run:
     - python >=3.7
     - click >=7.1,!=8.0.0
