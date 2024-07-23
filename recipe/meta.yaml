@@ -21,17 +21,17 @@ build:
     - go-licenses save . --save_path="./license-files/"
 
 requirements:
- build:
-    - {{ stdlib("c") }}
+  build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('go') }}
     - go-licenses
   host:
     - pip
-    - python >=3.7
+    - python
     - hatchling
   run:
-    - python >=3.7
+    - python
     - click >=7.1,!=8.0.0
     - gitpython >=1.0.0,!=3.1.29
     - requests >=2.0.0,<3
@@ -52,6 +52,7 @@ test:
     - pip check
     - wandb --help
     - wb --help
+    - python -c 'import wandb; wandb.require("core")'
   requires:
     - pip
 
