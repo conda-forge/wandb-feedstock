@@ -8,6 +8,6 @@ github:
 conda_build:
   pkg_format: '2'
 build_platform:
-  osx_64: osx_64
+  osx_64: linux_64
 provider:
-  osx_64: circle
+  osx_64: azure

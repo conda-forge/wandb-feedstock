@@ -17,14 +17,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>CircleCI</td>
-    <td>
-      <a href="https://circleci.com/gh/conda-forge/wandb-feedstock">
-        <img alt="OSX" src="https://img.shields.io/circleci/project/github/conda-forge/wandb-feedstock/main.svg?label=OSX">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
