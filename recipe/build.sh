@@ -7,9 +7,18 @@ if [ "$OS" == "Darwin" ]; then
     XCODE_FILE_NAME="Xcode_15.xip"
     XCODE_APP_NAME="Xcode.app"
     DOWNLOAD_DIR="$HOME/Downloads"
-    curl -L $XCODE_DOWNLOAD_URL -o "$DOWNLOAD_DIR/$XCODE_FILE_NAME"
+    mkdir -p "$DOWNLOAD_DIR"
+    curl -s -L $XCODE_DOWNLOAD_URL -o "$DOWNLOAD_DIR/$XCODE_FILE_NAME"
     unzip "$DOWNLOAD_DIR/$XCODE_FILE_NAME" -d "$DOWNLOAD_DIR"
     mv "$DOWNLOAD_DIR/$XCODE_APP_NAME" /Applications/
+    ls "/Applications/$XCODE_APP_NAME"
+    ls "/Applications/$XCODE_APP_NAME/Contents"
+    ls "/Applications/$XCODE_APP_NAME/Contents/Developer"
+    ls "/Applications/$XCODE_APP_NAME/Contents/Developer/Platforms"
+    ls "/Applications/$XCODE_APP_NAME/Contents/Developer/Platforms/MacOSX.platform"
+    ls "/Applications/$XCODE_APP_NAME/Contents/Developer/Platforms/MacOSX.platform/Developer"
+    ls "/Applications/$XCODE_APP_NAME/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
+
 fi
 
 ${PYTHON} -m pip install . -vv
