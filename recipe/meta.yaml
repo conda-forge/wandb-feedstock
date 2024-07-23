@@ -20,6 +20,8 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - swift 5.9.*  # [osx]
     - go
   host:
