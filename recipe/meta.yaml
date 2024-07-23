@@ -59,6 +59,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - flferretti
     - mxr-conda
     - rluria14
     - oblute
