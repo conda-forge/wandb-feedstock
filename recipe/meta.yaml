@@ -12,8 +12,7 @@ source:
 
 
 build:
-  number: 1
-  noarch: python
+  number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
