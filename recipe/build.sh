@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xe
 OS=$(uname)
 
 # macOS인 경우에만 실행
