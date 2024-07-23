@@ -22,14 +22,12 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - swift 5.9.*  # [osx]
     - go
   host:
     - pip
     - python
     - hatchling
     - typing_extensions
-    - swift 5.9.*  # [osx]
   run:
     - python 
     - click >=7.1,!=8.0.0
