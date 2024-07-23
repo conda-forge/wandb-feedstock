@@ -30,6 +30,7 @@ requirements:
     - pip
     - python
     - hatchling
+    - typing_extensions
   run:
     - python
     - click >=7.1,!=8.0.0
