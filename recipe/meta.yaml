@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.16.6" %}
+{% set version = "0.17.5" %}
 
 
 package:
@@ -7,22 +7,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 86f491e3012d715e0d7d7421a4d6de41abef643b7403046261f962f3e512fe1c
+  url: https://github.com/wandb/wandb/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: c2a11c9730c011a547211609eb497dc34d0603a722c3ea4317031f98326b549a
 
 
 build:
   number: 0
-  noarch: python
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv
+  script: 
+    - {{ PYTHON }} -m pip install . -vv
+    - go-licenses save . --save_path="./license-files/"
 
 requirements:
+ build:
+    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
+    - {{ compiler('go') }}
+    - go-licenses
   host:
     - pip
     - python >=3.7
+    - hatchling
   run:
     - python >=3.7
     - click >=7.1,!=8.0.0
@@ -33,10 +40,9 @@ requirements:
     - docker-pycreds >=0.4.0
     - protobuf >=3.19.0,!=4.21.0,<5
     - pyyaml
-    - pathtools
     - setproctitle
+    - platformdirs
     - setuptools
-    - appdirs >=1.4.3
     - typing_extensions
 
 test:
@@ -52,7 +58,9 @@ test:
 about:
   home: https://github.com/wandb/client
   license: MIT
-  license_file: LICENSE
+  license_file: 
+    - LICENSE
+    - license_files/
   summary: A CLI and library for interacting with the Weights and Biases API.
   doc_url: https://docs.wandb.com/
   dev_url: https://github.com/wandb/client
