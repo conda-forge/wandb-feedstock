@@ -16,7 +16,6 @@ build:
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
