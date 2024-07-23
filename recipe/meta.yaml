@@ -51,6 +51,7 @@ test:
     - pip check
     - wandb --help
     - wb --help
+    - python -c "import wandb; wandb.require('core')"
   requires:
     - pip
 
