@@ -12,8 +12,7 @@ source:
 
 
 build:
-  number: 1
-  noarch: python
+  number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
@@ -24,11 +23,11 @@ requirements:
     - go
   host:
     - pip
-    - python >=3.7
+    - python
     - hatchling
     - typing_extensions
   run:
-    - python >=3.7
+    - python 
     - click >=7.1,!=8.0.0
     - gitpython >=1.0.0,!=3.1.29
     - requests >=2.0.0,<3
