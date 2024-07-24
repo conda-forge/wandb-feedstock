@@ -23,7 +23,7 @@ requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - {{ compiler('go') }}
+    - {{ compiler('go-nocgo') }}
   host:
     - pip
     - python
