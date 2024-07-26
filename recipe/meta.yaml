@@ -24,11 +24,11 @@ requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - go
     - go-licenses
   host:
     - pip
     - python
+    - go
     - hatchling
     - typing_extensions
   run:
