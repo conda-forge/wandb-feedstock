@@ -24,7 +24,7 @@ requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - {{ compiler('go-nocgo') }}
+    - go
     - go-licenses
   host:
     - pip
