@@ -22,14 +22,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - go
-    - python 3.12.*
+    - python =3.12.*
   host:
     - pip
-    - python 3.12.*
+    - python  =3.12.*
     - hatchling
     - typing_extensions
   run:
-    - python 3.12.*
+    - python =3.12.*
     - click >=7.1,!=8.0.0
     - gitpython >=1.0.0,!=3.1.29
     - requests >=2.0.0,<3
@@ -37,11 +37,14 @@ requirements:
     - sentry-sdk >=1.0.0
     - docker-pycreds >=0.4.0
     - setuptools
-    - protobuf >=3.19.0,!=4.21.0,<6
+    - protobuf >=3.12.0,!=4.21.0,<6  # [py<39 and linux]
     - pyyaml
     - setproctitle
     - platformdirs
-    - typing_extensions
+    - typing_extensions   # [py<310]
+    - six >=1.10.0
+    - graphql-core >=0.5.0,<2
+    - promise >=2.0,<3
 
 test:
   imports:
