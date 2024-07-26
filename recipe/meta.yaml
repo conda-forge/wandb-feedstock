@@ -18,6 +18,9 @@ build:
     - wb=wandb.cli.cli:cli
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed 
+    - pwd
+    - ls -al
+    - find / -name "go.mod"
     - go-licenses save "core" --save_path="./license-files/"
 
 requirements:
