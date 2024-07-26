@@ -18,17 +18,16 @@ build:
     - wb=wandb.cli.cli:cli
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed 
-    - go-licenses save . --save_path="./license-files/"
+    - go-licenses save "core" --save_path="./license-files/"
 
 requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - go-licenses
+    - {{ compiler('go') }}
   host:
     - pip
     - python
-    - go
     - hatchling
     - typing_extensions
   run:
