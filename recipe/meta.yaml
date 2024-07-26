@@ -16,13 +16,16 @@ build:
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed 
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed 
+    - go-licenses save . --save_path="./license-files/"
 
 requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - {{ compiler('go-nocgo') }}
+    - {{ compiler('go') }}
+    - go-licenses
   host:
     - pip
     - python
@@ -60,7 +63,9 @@ test:
 about:
   home: https://github.com/wandb/client
   license: MIT
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - license-files/
   summary: A CLI and library for interacting with the Weights and Biases API.
   doc_url: https://docs.wandb.com/
   dev_url: https://github.com/wandb/client
