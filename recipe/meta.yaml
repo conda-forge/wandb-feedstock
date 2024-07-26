@@ -29,7 +29,7 @@ requirements:
     - hatchling
     - typing_extensions
   run:
-    - python =3.12.*
+    - python  =3.12.*
     - click >=7.1,!=8.0.0
     - gitpython >=1.0.0,!=3.1.29
     - requests >=2.0.0,<3
@@ -38,13 +38,14 @@ requirements:
     - docker-pycreds >=0.4.0
     - setuptools
     - protobuf >=3.12.0,!=4.21.0,<6  # [py<39 and linux]
+    - protobuf >=3.12.0,!=4.21.0,<6  # [py<39 and linux]
+    - protobuf >=3.15.0,!=4.21.0,<6  # [py==39 and linux]
+    - protobuf >=3.19.0,!=4.21.0,<6  # [py>39 and linux]
+    - protobuf >=3.19.0,!=4.21.0,<6  # [not linux]
     - pyyaml
     - setproctitle
     - platformdirs
-    - typing_extensions   # [py<310]
-    - six >=1.10.0
-    - graphql-core >=0.5.0,<2
-    - promise >=2.0,<3
+    - typing_extensions  # [py<310]
 
 test:
   imports:
@@ -53,6 +54,7 @@ test:
     - pip check
     - wandb --help
     - wb --help
+    - python -c "import wandb; wandb.require('core')"
   requires:
     - pip
 
