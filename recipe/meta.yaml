@@ -22,13 +22,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - go
+    - python 3.12.*
   host:
     - pip
-    - python
+    - python 3.12.*
     - hatchling
     - typing_extensions
   run:
-    - python 
+    - python 3.12.*
     - click >=7.1,!=8.0.0
     - gitpython >=1.0.0,!=3.1.29
     - requests >=2.0.0,<3
