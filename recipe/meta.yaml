@@ -25,6 +25,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
     - {{ compiler('go') }}
+    - go-licenses
   host:
     - pip
     - python
