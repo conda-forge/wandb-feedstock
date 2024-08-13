@@ -16,6 +16,7 @@ build:
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
+  script_env: WANDB_BUILD_SKIP_APPLE=true  # [osx]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
