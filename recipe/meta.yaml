@@ -17,13 +17,13 @@ build:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
   script_env: WANDB_BUILD_SKIP_APPLE=true  # [osx]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
-    - {{ compiler('go-nocgo') }}
   host:
     - pip
     - python
