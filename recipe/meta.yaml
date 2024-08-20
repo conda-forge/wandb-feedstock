@@ -13,6 +13,7 @@ source:
 
 build:
   number: 1
+  noarch: python
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
@@ -21,15 +22,12 @@ build:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - {{ stdlib("c") }}
-    - {{ compiler('c') }}
   host:
     - pip
-    - python
+    - python >=3.7
     - hatchling
   run:
-    - python
+    - python >=3.7
     - appdirs >=1.4.3
     - click >=7.1,!=8.0.0
     - docker-pycreds >=0.4.0
