@@ -7,36 +7,38 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wandb-{{ version }}.tar.gz
-  sha256: 86f491e3012d715e0d7d7421a4d6de41abef643b7403046261f962f3e512fe1c
+  url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
+  sha256: 938b7dd023a29282b63034d4d383939c1d0f00d3161375994f7a9d9d619bae45
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv
+  script_env: WANDB_BUILD_SKIP_APPLE=true  # [osx]
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
     - python >=3.7
+    - setuptools
   run:
     - python >=3.7
-    - click >=7.1,!=8.0.0
-    - gitpython >=1.0.0,!=3.1.29
-    - requests >=2.0.0,<3
-    - psutil >=5.0.0
-    - sentry-sdk >=1.0.0
-    - docker-pycreds >=0.4.0
-    - protobuf >=3.19.0,!=4.21.0,<5
-    - pyyaml
-    - pathtools
-    - setproctitle
-    - setuptools
     - appdirs >=1.4.3
+    - click >=7.1,!=8.0.0
+    - docker-pycreds >=0.4.0
+    - gitpython >=1.0.0,!=3.1.29
+    - platformdirs
+    - protobuf >=3.19.0,!=4.21.0,<5
+    - psutil >=5.0.0
+    - pyyaml
+    - requests >=2.0.0,<3
+    - sentry-sdk >=1.0.0
+    - setproctitle
     - typing_extensions
 
 test:
