@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.16.6" %}
+{% set version = "0.17.8" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 938b7dd023a29282b63034d4d383939c1d0f00d3161375994f7a9d9d619bae45
+  sha256: d14a4ce129b14043a199eacefceb36c7f8537f5cade75fd372006e8549e8db92
 
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - wandb=wandb.cli.cli:cli
@@ -27,6 +27,7 @@ requirements:
     - python >=3.7
     - setuptools
   run:
+    - setuptools
     - python >=3.7
     - appdirs >=1.4.3
     - click >=7.1,!=8.0.0
