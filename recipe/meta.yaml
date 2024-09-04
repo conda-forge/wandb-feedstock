@@ -18,6 +18,9 @@ build:
     - wb=wandb.cli.cli:cli
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - cd core && cp ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [unix]
+    - cd core && copy ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [win]
+
   script_env:
     - WANDB_BUILD_SKIP_APPLE=true
 
