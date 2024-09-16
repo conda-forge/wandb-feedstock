@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.16.6" %}
+{% set version = "0.17.3" %}
 
 
 package:
@@ -8,26 +8,37 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 938b7dd023a29282b63034d4d383939c1d0f00d3161375994f7a9d9d619bae45
+  sha256: 2e5704b131533862d68a2efcde082276948d32e38a8310d9ecb165517ba1bee3
 
 
 build:
-  number: 1
-  noarch: python
+  number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script_env: WANDB_BUILD_SKIP_APPLE=true  # [osx]
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - cd core && cp ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [unix]
+    - cd core && copy ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [win]
+
+  script_env:
+    - WANDB_BUILD_SKIP_APPLE=true
 
 requirements:
+  build:
+    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
+    - {{ compiler('go-cgo') }}
+    - go-licenses
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python >=3.7
+    - python
+    - hatchling
     - setuptools
   run:
-    - python >=3.7
+    - python
     - appdirs >=1.4.3
     - click >=7.1,!=8.0.0
     - docker-pycreds >=0.4.0
@@ -48,6 +59,7 @@ test:
     - pip check
     - wandb --help
     - wb --help
+    - python -c "import wandb; wandb.require('core')"
   requires:
     - pip
 
