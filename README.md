@@ -159,6 +159,3 @@ Feedstock Maintainers
 * [@timoffex](https://github.com/timoffex/)
 * [@vanpelt](https://github.com/vanpelt/)
 
-
-<!-- dummy commit to enable rerendering -->
-
