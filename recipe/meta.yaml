@@ -12,7 +12,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
