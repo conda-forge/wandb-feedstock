@@ -37,6 +37,7 @@ requirements:
     - python
     - hatchling
     - setuptools
+    - typing_extensions
   run:
     - setuptools
     - python
