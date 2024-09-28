@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.17.3" %}
+{% set version = "0.18.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 2e5704b131533862d68a2efcde082276948d32e38a8310d9ecb165517ba1bee3
+  sha256: 8f99c7c6ab5bb2f08a354c7c7c4dd02544f4385dc63d9047e755ebbbbf257760
 
 
 build:
@@ -40,6 +40,7 @@ requirements:
     - hatchling
     - setuptools
   run:
+    - setuptools
     - python
     - appdirs >=1.4.3
     - click >=7.1,!=8.0.0
