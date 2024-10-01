@@ -10,17 +10,11 @@ source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
   sha256: 276aeffc43ad6996aadc22bb4f91454d5367380068972c54da5c1b3c2e5aa24d
 
-
 build:
   number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script:
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - cd core && cp ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [unix]
-    - cd core && copy ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [win]
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
   script_env:
     - WANDB_BUILD_SKIP_APPLE=true
 
