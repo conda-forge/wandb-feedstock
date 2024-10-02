@@ -335,7 +335,6 @@ Feedstock Maintainers
 * [@oblute](https://github.com/oblute/)
 * [@raubitsj](https://github.com/raubitsj/)
 * [@rluria14](https://github.com/rluria14/)
-* [@synapticarbors](https://github.com/synapticarbors/)
 * [@timoffex](https://github.com/timoffex/)
 * [@vanpelt](https://github.com/vanpelt/)
 
