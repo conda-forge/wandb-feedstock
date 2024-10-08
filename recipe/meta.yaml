@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.17.3" %}
+{% set version = "0.18.1" %}
 
 
 package:
@@ -8,19 +8,15 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 2e5704b131533862d68a2efcde082276948d32e38a8310d9ecb165517ba1bee3
-
+  sha256: 276aeffc43ad6996aadc22bb4f91454d5367380068972c54da5c1b3c2e5aa24d
+  patches:
+    - 01-find_nvidia_stats_executable.patch
 
 build:
   number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script:
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - cd core && cp ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [unix]
-    - cd core && copy ../LICENSE . && go-licenses save . --save_path="./license-files/"  # [win]
-
   script_env:
     - WANDB_BUILD_SKIP_APPLE=true
 
@@ -31,6 +27,8 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('c') }}
     - {{ compiler('go-cgo') }}
+    - {{ compiler('rust') }}
+    - cargo-bundle-licenses
     - go-licenses
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -39,7 +37,9 @@ requirements:
     - python
     - hatchling
     - setuptools
+    - typing_extensions
   run:
+    - setuptools
     - python
     - appdirs >=1.4.3
     - click >=7.1,!=8.0.0
@@ -61,7 +61,7 @@ test:
     - pip check
     - wandb --help
     - wb --help
-    - python -c "import wandb; wandb.require('core')"
+    - python -c "import wandb"
   requires:
     - pip
 
