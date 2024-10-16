@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.18.1" %}
+{% set version = "0.18.3" %}
 
 
 package:
@@ -8,9 +8,10 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 276aeffc43ad6996aadc22bb4f91454d5367380068972c54da5c1b3c2e5aa24d
+  sha256: 20cd7fbd8573a1ce1807ebcc71e217ceffa3b6c1cbf5a7d26551653fba8d054e
   patches:
     - 01-find_nvidia_stats_executable.patch
+    - 02-top_level_go_file.patch
 
 build:
   number: 0

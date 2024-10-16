@@ -1,0 +1,24 @@
+diff --git a/core/README.md b/core/README.md
+index cc3d5816e..ba8f259ce 100644
+--- a/core/README.md
++++ b/core/README.md
+@@ -3,6 +3,8 @@
+   <img src="../assets/logo-light.svg#gh-light-mode-only" width="600" alt="Weights & Biases" />
+ </p>
+ 
++<!-- IGNORE. Comment added in patch to work around https://github.com/conda/conda-build/issues/4241. -->
++
+ <p align='center'>
+ <a href="https://pypi.org/project/wandb-core/"><img src="https://img.shields.io/pypi/v/wandb" /></a>
+ <a href="https://app.circleci.com/pipelines/github/wandb/core"><img src="https://img.shields.io/circleci/build/github/wandb/wandb/main" /></a>
+diff --git a/core/core.go b/core/core.go
+new file mode 100644
+index 000000000..8cc8bd128
+--- /dev/null
++++ b/core/core.go
+@@ -0,0 +1,5 @@
++// Package core implements a process that asynchronously uploads W&B data.
++package core
++
++// NOTE: This top-level file is necessary for certain tooling,
++//   in particular go-licenses.
