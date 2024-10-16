@@ -10,6 +10,5 @@ ${PYTHON} -m pip install --no-deps --no-build-isolation -vv .
 
 pushd core 
 cp ../LICENSE .
-ls
 go-licenses save . --save_path="./license-files/"
 popd
