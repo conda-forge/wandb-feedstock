@@ -1,0 +1,11 @@
+diff --git a/core/core.go b/core/core.go
+new file mode 100644
+index 000000000..8cc8bd128
+--- /dev/null
++++ b/core/core.go
+@@ -0,0 +1,5 @@
++// Package core implements a process that asynchronously uploads W&B data.
++package core
++
++// NOTE: This top-level file is necessary for certain tooling,
++//   in particular go-licenses.
