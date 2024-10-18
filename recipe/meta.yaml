@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.18.3" %}
+{% set version = "0.18.5" %}
 
 
 package:
@@ -8,18 +8,13 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 20cd7fbd8573a1ce1807ebcc71e217ceffa3b6c1cbf5a7d26551653fba8d054e
-  patches:
-    - 01-find_nvidia_stats_executable.patch
-    - 02-top_level_go_file.patch
+  sha256: f35a4440dc9e429a8cf6c174f8e3912c2a6f9f66ef2ea6804f0db165ff6e9dd1
 
 build:
   number: 0
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
-  script_env:
-    - WANDB_BUILD_SKIP_APPLE=true
 
 requirements:
   build:
@@ -51,9 +46,9 @@ requirements:
     - psutil >=5.0.0
     - pyyaml
     - requests >=2.0.0,<3
-    - sentry-sdk >=1.0.0
+    - sentry-sdk >=2.0.0
     - setproctitle
-    - typing_extensions
+    - typing_extensions <5,>=4.4
 
 test:
   imports:
