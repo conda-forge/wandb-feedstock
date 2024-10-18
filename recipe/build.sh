@@ -2,7 +2,7 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-pushd nvidia_gpu_stats 
+pushd gpu_stats 
 cargo-bundle-licenses --format yaml --output ../THIRDPARTY.yml
 popd
 
