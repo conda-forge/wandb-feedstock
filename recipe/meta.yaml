@@ -42,7 +42,7 @@ requirements:
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
-    - protobuf >=3.19.0,!=4.21.0
+    - protobuf >=3.19.0,!=4.21.0,!=5.28.0,<6
     - psutil >=5.0.0
     - pyyaml
     - requests >=2.0.0,<3
