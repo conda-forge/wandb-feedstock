@@ -9,7 +9,7 @@ c_stdlib_version:
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge/label/python_rc,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
@@ -20,10 +20,10 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.13.* *_cp313
+rust_compiler:
+- rust
 target_platform:
 - linux-64
 zip_keys:
 - - c_stdlib_version
   - cdt_name
-- - python
-  - channel_sources
