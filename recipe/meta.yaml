@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.18.7" %}
+{% set version = "0.19.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: eeeb31b297a24a72e23239460296a15946215b8dd4902c1af6b8b63b9261403a
+  sha256: 8f1c02dcc80ab33f195d1594bc25066d2ca1874e0e221490331fba001af45031
 
 build:
   number: 0
@@ -35,6 +35,9 @@ requirements:
     - setuptools
     - typing_extensions
   run:
+    - pydantic >=2.6,<3
+    - six
+    - typing >=3.6.4
     - setuptools
     - python
     - appdirs >=1.4.3
@@ -48,7 +51,7 @@ requirements:
     - requests >=2.0.0,<3
     - sentry-sdk >=2.0.0
     - setproctitle
-    - typing_extensions <5,>=4.4
+    - typing_extensions >=4.4,<5
 
 test:
   imports:
