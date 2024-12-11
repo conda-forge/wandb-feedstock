@@ -52,6 +52,7 @@ requirements:
     - sentry-sdk >=2.0.0
     - setproctitle
     - typing_extensions >=4.4,<5
+    - eval_type_backport
 
 test:
   imports:
