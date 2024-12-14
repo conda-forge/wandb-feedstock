@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.19.0" %}
+{% set version = "0.19.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 8f1c02dcc80ab33f195d1594bc25066d2ca1874e0e221490331fba001af45031
+  sha256: c6a1e477b778f77d6c81ef8607fbd54fad5d8ce1b447a79b483ca090b9d926fe
 
 build:
   number: 0
@@ -35,8 +35,10 @@ requirements:
     - setuptools
     - typing_extensions
   run:
+    - graphql-core >=0.5.0,<2
+    - promise >=2.0,<3
     - pydantic >=2.6,<3
-    - six
+    - six >=1.10.0
     - typing >=3.6.4
     - setuptools
     - python
