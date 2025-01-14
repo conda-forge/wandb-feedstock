@@ -75,6 +75,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - jacobromero
     - mxr-conda
     - rluria14
     - oblute
