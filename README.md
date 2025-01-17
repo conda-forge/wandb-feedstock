@@ -371,6 +371,7 @@ Feedstock Maintainers
 
 * [@andrewtruong](https://github.com/andrewtruong/)
 * [@dmitryduev](https://github.com/dmitryduev/)
+* [@jacobromero](https://github.com/jacobromero/)
 * [@kptkin](https://github.com/kptkin/)
 * [@mxr-conda](https://github.com/mxr-conda/)
 * [@ndmaxar](https://github.com/ndmaxar/)
