@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.19.5" %}
+{% set version = "0.19.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: b3ac306459c41d532c8258d4d7164d13434309ed5890151cf6a142acffeb81fe
+  sha256: ac6f8fafb902f2da46339c959420b5e5393112ba728e86cb119432b1b7f8e269
 
 build:
   number: 0
