@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.19.10" %}
+{% set version = "0.19.11" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 6b00852fa23411077beadae76c233d5b0ee0d29faa3670cada152161e6c41b1f
+  sha256: 1135362efb8e2c1915ab21750935161b1dcbb3bc6b9e7b7ff1c531d49814bfc0
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     - typing_extensions
   run:
     - pydantic <3
-    - six >=1.10.0
+    - six
     - typing >=3.6.4
     - setuptools
     - python
