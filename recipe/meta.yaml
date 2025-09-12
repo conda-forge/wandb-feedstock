@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.21.1" %}
+{% set version = "0.21.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 0ac7eb7def3359b816901de980712321ffd7068cf365083062fb8641406b6ba1
+  sha256: 9deab726ef2dcbdcb1a1fa1f7ef1db7129838cfc7b7ca1d4c29083a43bc05ad5
 
 build:
   number: 0
@@ -42,7 +42,7 @@ requirements:
     - setuptools
     - python
     - appdirs >=1.4.3
-    - click >=7.1,!=8.0.0
+    - click >=8.0.1
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
