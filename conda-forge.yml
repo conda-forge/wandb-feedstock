@@ -14,4 +14,9 @@ github:
 provider:
   linux_aarch64: default
   linux_ppc64le: default
+  osx: azure
+azure:
+  settings_osx:
+    pool:
+      vmImage: macOS-14
 test: native_and_emulated
