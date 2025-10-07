@@ -11,7 +11,7 @@ source:
   sha256: 788ea92ece4e6a0212ee111d6185491db2cc871fefa9f66b2794bc70327967f6
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - wandb=wandb.cli.cli:cli
     - wb=wandb.cli.cli:cli
@@ -67,12 +67,12 @@ test:
     - pip
 
 about:
-  home: https://github.com/wandb/client
+  home: https://github.com/wandb/wandb
   license: MIT
   license_file: LICENSE
-  summary: A CLI and library for interacting with the Weights and Biases API.
-  doc_url: https://docs.wandb.com/
-  dev_url: https://github.com/wandb/client
+  summary: The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.
+  doc_url: https://docs.wandb.ai
+  dev_url: https://github.com/wandb/wandb
 
 extra:
   recipe-maintainers:
