@@ -22,6 +22,3 @@ rust_compiler:
 - rust
 target_platform:
 - linux-ppc64le
-zip_keys:
-- - python
-  - channel_sources
