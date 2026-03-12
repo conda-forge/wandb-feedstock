@@ -1,5 +1,5 @@
 {% set name = "wandb" %}
-{% set version = "0.25.0" %}
+{% set version = "0.25.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v{{ version }}.tar.gz
-  sha256: 554a5d2ea9a655df88f9f745e368173537580a6ff06790983624e38eec13d131
+  sha256: bf823077098c31abce58abe680acf6b043ea3f96006e80c995dcb26160074449
 
 build:
   number: 0
@@ -46,7 +46,7 @@ requirements:
     - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
-    - protobuf >=3.19.0,!=4.21.0,!=5.28.0,<7
+    - protobuf >4.21.0,!=5.28.0,!=5.29.0,<7
     - psutil >=5.0.0
     - pyyaml
     - requests >=2.0.0,<3
