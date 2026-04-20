@@ -15,6 +15,11 @@ pushd wandb/vendor/wandb_orjson
 cargo-bundle-licenses --format yaml --output ../../../THIRDPARTY_ORJSON.yml
 popd
 
+# Unset CARGO_BUILD_TARGET: conda's rust compiler activation sets it, but
+# xpu/hatch.py hardcodes "target/release/" and doesn't account for the
+# target-triple subdirectory that CARGO_BUILD_TARGET introduces.
+unset CARGO_BUILD_TARGET
+
 ${PYTHON} -m pip install --no-deps --no-build-isolation -vv .
 
 pushd core
