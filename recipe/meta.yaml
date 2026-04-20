@@ -37,23 +37,15 @@ requirements:
   run:
     - packaging
     - pydantic <3
-    - six
-    - typing >=3.6.4
-    - setuptools
     - python
-    - appdirs >=1.4.3
     - click >=8.0.1
-    - docker-pycreds >=0.4.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
     - protobuf >4.21.0,!=5.28.0,!=5.29.0,<8
-    - psutil >=5.0.0
     - pyyaml
     - requests >=2.0.0,<3
     - sentry-sdk >=2.0.0
-    - setproctitle
     - typing_extensions >=4.8,<5
-    - eval_type_backport
 
 test:
   imports:
