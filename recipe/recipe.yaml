@@ -1,0 +1,91 @@
+schema_version: 1
+
+context:
+  name: wandb
+  version: "0.26.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
+  sha256: 98bfc4a1b9ab44c345b310565017dd5d9d381b543ddd5113505c75db4fa11c27
+
+build:
+  number: 0
+  python:
+    entry_points:
+      - wandb=wandb.cli.cli:cli
+      - wb=wandb.cli.cli:cli
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('c') }}
+    - ${{ compiler('go-cgo') }}
+    - ${{ compiler('rust') }}
+    - cargo-bundle-licenses
+    - go-licenses
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+  host:
+    - pip
+    - python
+    - hatchling
+    - setuptools
+    - typing_extensions
+  run:
+    - packaging
+    - pydantic <3
+    - python
+    - click >=8.0.1
+    - gitpython >=1.0.0,!=3.1.29
+    - platformdirs
+    - protobuf >4.21.0,!=5.28.0,!=5.29.0,<8
+    - pyyaml
+    - requests >=2.0.0,<3
+    - sentry-sdk >=2.0.0
+    - typing_extensions >=4.8,<5
+
+tests:
+  - python:
+      imports:
+        - wandb
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+    script:
+      - wandb --help
+      - wb --help
+      - wandb beta leet --help
+      - python -c "import wandb"
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.
+  homepage: https://github.com/wandb/wandb
+  repository: https://github.com/wandb/wandb
+  documentation: https://docs.wandb.ai
+
+extra:
+  recipe-maintainers:
+    - jacobromero
+    - mxr-conda
+    - rluria14
+    - oblute
+    - ndmaxar
+    - vanpelt
+    - andrewtruong
+    - raubitsj
+    - kptkin
+    - dmitryduev
+    - timoffex
