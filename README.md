@@ -11,7 +11,7 @@ Summary: The AI developer platform. Use Weights & Biases to train and fine-tune 
 
 Development: https://github.com/wandb/wandb
 
-Documentation: https://docs.wandb.ai
+Documentation: https://docs.wandb.ai/
 
 Current build status
 ====================
