@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: "0.26.0"
+  version: 0.26.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: 98bfc4a1b9ab44c345b310565017dd5d9d381b543ddd5113505c75db4fa11c27
+  sha256: 7357eab838144fe9de9a9e7f385ebf035750189d5521f8ab0d60ae4ede9f3f4e
 
 build:
   number: 0
@@ -22,9 +22,9 @@ build:
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
     - ${{ stdlib("c") }}
     - ${{ compiler('c') }}
     - ${{ compiler('go-cgo') }}
@@ -32,9 +32,9 @@ requirements:
     - cargo-bundle-licenses
     - go-licenses
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
   host:
     - pip
     - python
@@ -53,7 +53,8 @@ requirements:
     - requests >=2.0.0,<3
     - sentry-sdk >=2.0.0
     - typing_extensions >=4.8,<5
-
+    - six
+    - typing >=3.6.4
 tests:
   - python:
       imports:
