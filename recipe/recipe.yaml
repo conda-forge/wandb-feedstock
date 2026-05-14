@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: 0.26.1
+  version: 0.27.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: 7357eab838144fe9de9a9e7f385ebf035750189d5521f8ab0d60ae4ede9f3f4e
+  sha256: dec00cc3e3e27705439c3226e1e819971799935c5205aea8be434ea8d62e3e7a
 
 build:
   number: 0
@@ -43,9 +43,9 @@ requirements:
     - typing_extensions
   run:
     - packaging
-    - pydantic <3
+    - pydantic >=2.6,<3
     - python
-    - click >=8.0.1
+    - click >=8.2.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
     - protobuf >4.21.0,!=5.28.0,!=5.29.0,<8
