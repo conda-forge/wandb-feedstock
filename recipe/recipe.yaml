@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: 0.26.1
+  version: 0.27.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: 7357eab838144fe9de9a9e7f385ebf035750189d5521f8ab0d60ae4ede9f3f4e
+  sha256: 078f363854f28cac77f0325009b68cffc25591480a57dc134df8f01f7a2d8173
 
 build:
   number: 0
@@ -43,9 +43,9 @@ requirements:
     - typing_extensions
   run:
     - packaging
-    - pydantic <3
+    - pydantic >=2.6,<3
     - python
-    - click >=8.0.1
+    - click >=8.2.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs
     - protobuf >4.21.0,!=5.28.0,!=5.29.0,<8
@@ -53,8 +53,6 @@ requirements:
     - requests >=2.0.0,<3
     - sentry-sdk >=2.0.0
     - typing_extensions >=4.8,<5
-    - six
-    - typing >=3.6.4
 tests:
   - python:
       imports:
