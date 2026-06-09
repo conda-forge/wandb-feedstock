@@ -37,14 +37,14 @@ requirements:
         - cross-python_${{ target_platform }}
   host:
     - pip
-    - python
+    - python >=3.10
     - hatchling
     - setuptools
     - typing_extensions
   run:
     - packaging
     - pydantic >=2.6,<3
-    - python
+    - python >=3.10
     - click >=8.2.0
     - gitpython >=1.0.0,!=3.1.29
     - platformdirs

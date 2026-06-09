@@ -8,10 +8,6 @@ PUSHD parquet-rust-wrapper
 cargo-bundle-licenses --format yaml --output ../THIRDPARTY_PARQUET.yml || goto :error
 POPD
 
-PUSHD wandb\vendor\wandb_orjson
-cargo-bundle-licenses --format yaml --output ..\..\..\THIRDPARTY_ORJSON.yml || goto :error
-POPD
-
 %PYTHON% -m pip install --no-deps --no-build-isolation -vv .
 
 PUSHD core
