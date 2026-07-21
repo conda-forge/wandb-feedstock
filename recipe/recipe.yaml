@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: "0.28.0"
+  version: 0.28.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: 08daf76bb7a82eb480b40fbf6abd7548c87e80fd39bf6ca522506e057f171c4d
+  sha256: f7eb155718e09f09d95438d4cf58de0fcb0b50b8dae6a5133eb8b8cf836222b7
 
 build:
   number: 0
@@ -46,9 +46,8 @@ requirements:
     - pydantic >=2.6,<3
     - python
     - click >=8.2.0
-    - gitpython >=1.0.0,!=3.1.29
     - platformdirs
-    - protobuf >4.21.0,!=5.28.0,!=5.29.0,<8
+    - protobuf >=5,!=5.28.0,!=5.29.0,<8
     - pyyaml
     - requests >=2.0.0,<3
     - sentry-sdk >=2.0.0
