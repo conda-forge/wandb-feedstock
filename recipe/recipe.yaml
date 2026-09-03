@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: 0.28.2
+  version: 0.29.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: af05686515a25ea1e59bed2a94145d6150f43c841fb826d7d7e469ddd498f82f
+  sha256: 6a066b28e81404c0b13b4cd9aad16de4d8521043f9cc4fe93d59aad69440b03f
 
 build:
   number: 0
@@ -56,6 +56,7 @@ requirements:
     - sentry-sdk >=2.0.0
     - typing_extensions >=4.8,<5
     - opentelemetry-api >=1.43.0
+    - python-xxhash >=3.0.0
 tests:
   - python:
       imports:
