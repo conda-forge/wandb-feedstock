@@ -15,7 +15,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 macos_machine:
-- arm64-apple-darwin20.0.0
+- x86_64-apple-darwin13.4.0
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -25,4 +25,7 @@ python:
 rust_compiler:
 - rust
 target_platform:
-- osx-arm64
+- osx-64
+zip_keys:
+- - python
+  - channel_sources
