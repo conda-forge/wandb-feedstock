@@ -13,7 +13,7 @@ source:
   sha256: 755258ae8edc891518b5b2d2f47c33f855c1f263e28fdf5317673eb0f153c341
 
 build:
-  number: 0
+  number: 1
   python:
     entry_points:
       - wandb=wandb.cli.cli:cli
