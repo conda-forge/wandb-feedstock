@@ -1,7 +1,7 @@
 @echo on
 
-PUSHD xpu
-cargo-bundle-licenses --format yaml --output ../THIRDPARTY_XPU.yml || goto :error
+PUSHD symon
+cargo-bundle-licenses --format yaml --output ../THIRDPARTY_SYMON.yml || goto :error
 POPD
 
 PUSHD parquet-rust-wrapper
