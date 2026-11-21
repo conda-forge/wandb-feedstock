@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wandb
-  version: 0.30.0
+  version: 0.31.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/wandb/wandb/archive/v${{ version }}.tar.gz
-  sha256: 755258ae8edc891518b5b2d2f47c33f855c1f263e28fdf5317673eb0f153c341
+  sha256: 89fee6ac078d1ab56efa9b37a1fddbf9f882658a741cbdfc892c49145dde489c
 
 build:
   number: 0
@@ -57,7 +57,7 @@ requirements:
     - opentelemetry-api >=1.43.0
     - python-xxhash >=3.0.0
     - opentelemetry-sdk >=1.43.0
-    - opentelemetry-exporter-otlp-proto-http >=1.43.0
+    - opentelemetry-exporter-otlp-proto-common >=1.43.0
 tests:
   - python:
       imports:
